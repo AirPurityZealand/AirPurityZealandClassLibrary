@@ -4,7 +4,7 @@
     {
         public int Id { get; set; }
         public DateTime Timestamp { get; set; }
-        public string RoomParameter { get; set; }
+        public string RoomId { get; set; }
         public int Co2 { get; set; }
         public string Quality { get; set; }
 
@@ -13,26 +13,26 @@
 
         }
 
-        public AirMeasurement(int id,DateTime timestamp,string roomParameter,int Co2)
+        public AirMeasurement(int id,DateTime timestamp,string roomId,int Co2)
         {
             this.Id = id;
             this.Timestamp = timestamp;
-            this.RoomParameter = roomParameter;
+            this.RoomId = roomId;
             this.Co2 = Co2;
         }
 
-        public AirMeasurement(int id,DateTime timestamp,string roomParameter)
+        public AirMeasurement(int id,DateTime timestamp,string roomId)
         {
             this.Id = id;
             this.Timestamp = timestamp;
-            this.RoomParameter = roomParameter;
+            this.RoomId = roomId;
         }
 
-        public void ValidateRoomNumber()
+        public void ValidateRoomId()
         {
-            if (this.RoomParameter.Length <= 0)
+            if (this.RoomId.Length <= 0)
             {
-                throw new ArgumentOutOfRangeException("The room number is invalid. The room parameter must be more than zero characters");
+                throw new ArgumentOutOfRangeException("The room id is invalid. The room id must be more than zero characters");
             }
         }
 
